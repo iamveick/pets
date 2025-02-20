@@ -1,0 +1,7 @@
+{{!< main}}
+<h1>Confirm Delete</h1>
+<p>Are you sure you want to delete {{pet.pet_name}}?</p>
+<form action="/delete/{{pet.pet_id}}" method="post">
+    <input type="submit" value="Delete">
+    <a href="/">Cancel</a>
+</form>

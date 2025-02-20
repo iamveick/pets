@@ -1,0 +1,27 @@
+{{!< main}}
+<h1 class="text-center mb-4">Create New Pet</h1>
+<form action="/create" method="post" class="row g-3">
+    <div class="col-md-6">
+        <label for="pet_name" class="form-label">Pet Name:</label>
+        <input type="text" id="pet_name" name="pet_name" required class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="age" class="form-label">Age:</label>
+        <input type="number" id="age" name="age" required class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="owner_name" class="form-label">Owner Name:</label>
+        <input type="text" id="owner_name" name="owner_name" required class="form-control">
+    </div>
+    <div class="col-md-6">
+        <label for="type_id" class="form-label">Pet Type:</label>
+        <select id="type_id" name="type_id" class="form-select">
+            {{#each pet_types}}
+            <option value="{{type_id}}">{{type_name}}</option>
+            {{/each}}
+        </select>
+    </div>
+    <div class="col-12">
+        <input type="submit" value="Create" class="btn btn-primary">
+    </div>
+</form>

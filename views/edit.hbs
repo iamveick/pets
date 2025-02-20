@@ -1,0 +1,17 @@
+{{!< main}}
+<h1>Edit Pet</h1>
+<form action="/edit/{{pet.pet_id}}" method="post">
+    <label for="pet_name">Pet Name:</label>
+    <input type="text" id="pet_name" name="pet_name" value="{{pet.pet_name}}" required><br>
+    <label for="age">Age:</label>
+    <input type="number" id="age" name="age" value="{{pet.age}}" required><br>
+    <label for="owner_name">Owner Name:</label>
+    <input type="text" id="owner_name" name="owner_name" value="{{pet.first_name}} {{pet.last_name}}" required><br>
+    <label for="type_id">Pet Type:</label>
+    <select id="type_id" name="type_id">
+        {{#each pet_types}}
+        <option value="{{type_id}}" {{#if (eq this.type_id ../pet.type_id)}}selected{{/if}}>{{type_name}}</option>
+        {{/each}}
+    </select><br>
+    <input type="submit" value="Update">
+</form>
